@@ -36,7 +36,7 @@ def polymerization(sequences, catalysts):
 
             if ID1 == ID2 and sequences[ID1].tot > 1:
                 checkpoint += kp[ID1_e3][ID2_e5]*sequences[ID1].tot*(sequences[ID1].tot - 1)
-            else:
+            elif ID1 != ID2:
                 checkpoint += kp[ID1_e3][ID2_e5]*sequences[ID1].tot*sequences[ID2].tot
 
             bond = str(ID2_e5) + str(ID1_e3)
@@ -306,3 +306,4 @@ def degradation(sequences):
 
     Parameters.kh_events += 1
     
+ 
