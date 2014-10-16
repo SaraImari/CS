@@ -68,7 +68,7 @@ def update_propensities(sequences, catalysts):
             """ 3' of seq 1 binds with 5' of seq 2"""
             if ID1 == ID2 and sequences[ID1].tot > 1:
                 Ap_p += kp[ID1_e3][ID2_e5]*sequences[ID1].tot*(sequences[ID1].tot - 1)
-            else:
+            elif ID1 != ID2:
                 Ap_p += kp[ID1_e3][ID2_e5]*sequences[ID1].tot*sequences[ID2].tot
 
 
